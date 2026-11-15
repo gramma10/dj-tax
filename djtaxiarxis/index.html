@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="seo.title">DJ TAXIARXIS | DJ, Ήχος, Φωτισμός & 360° Photo Booth για Γάμους και Βαπτίσεις</title>
+  <meta name="description" data-i18n="seo.description" content="DJ, ενοικίαση ήχου και φωτισμού, φωτιστική διακόσμηση και 360° photo booth για δεξιώσεις γάμων, βαπτίσεις, εταιρικές εκδηλώσεις και ιδιωτικά πάρτι.">
+  <meta name="theme-color" content="#0b0a09">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0a09'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23c9a45c' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23c9a45c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" id="header">
+    <a href="#home" class="logo" aria-label="DJ Taxiarxis">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <circle cx="16" cy="16" r="3" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">DJ <b>TAXIARXIS</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Κύρια πλοήγηση">
+      <a href="#services" data-i18n="nav.services">Υπηρεσίες</a>
+      <a href="#events" data-i18n="nav.events">Εκδηλώσεις</a>
+      <a href="#process" data-i18n="nav.process">Πώς δουλεύουμε</a>
+      <a href="#contact" data-i18n="nav.contact">Επικοινωνία</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="gr">GR</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="btn btn-gold btn-sm header-cta" data-i18n="nav.cta">Ζητήστε προσφορά</a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Μενού" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="#services" data-i18n="nav.services">Υπηρεσίες</a>
+      <a href="#events" data-i18n="nav.events">Εκδηλώσεις</a>
+      <a href="#process" data-i18n="nav.process">Πώς δουλεύουμε</a>
+      <a href="#contact" data-i18n="nav.contact">Επικοινωνία</a>
+      <a href="https://www.instagram.com/_taxiarhis_/" target="_blank" rel="noopener noreferrer" class="mobile-ig">Instagram · @_taxiarhis_</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="home">
+      <video class="hero-video" src="Man_tossing_vinyl_record_202606111849.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <div class="hero-shade"></div>
+
+      <div class="hero-inner">
+        <p class="eyebrow" data-i18n="hero.eyebrow">DJ · Ήχος · Φωτισμός · 360° Photo Booth</p>
+        <h1 class="hero-title" data-i18n="hero.title">Η δεξίωσή σας,<br><em>όπως τη φανταστήκατε.</em></h1>
+        <p class="hero-lead" data-i18n="hero.lead">Μουσική, ήχος, φωτισμός και 360° photo booth για γάμους, βαπτίσεις και κάθε εκδήλωση. Ένας συνεργάτης που αναλαμβάνει τα πάντα, από το στήσιμο μέχρι το τελευταίο τραγούδι.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-gold" data-i18n="hero.cta1">Ζητήστε προσφορά</a>
+          <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Δείτε τις υπηρεσίες</a>
+        </div>
+      </div>
+
+      <div class="hero-strip">
+        <ul class="strip-track">
+          <li data-i18n="strip.1">Γάμοι</li>
+          <li data-i18n="strip.2">Βαπτίσεις</li>
+          <li data-i18n="strip.3">Εταιρικές εκδηλώσεις</li>
+          <li data-i18n="strip.4">Ιδιωτικά πάρτι</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Services ============ -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="services.eyebrow">Υπηρεσίες</p>
+          <h2 class="section-title" data-i18n="services.title">Όλα όσα χρειάζεται μια δεξίωση, <em>από μία ομάδα.</em></h2>
+          <p class="section-lead" data-i18n="services.lead">Επιλέξτε μία υπηρεσία ή συνδυάστε τες σε ένα ενιαίο πακέτο. Ένας υπεύθυνος, ένας συντονισμός, κανένα κενό ανάμεσα σε διαφορετικά συνεργεία.</p>
+        </header>
+
+        <nav class="service-index reveal" aria-label="Κατηγορίες υπηρεσιών">
+          <a href="#service-dj"><span>01</span><b data-i18n="s1.name">DJ & Μουσική Επιμέλεια</b></a>
+          <a href="#service-av"><span>02</span><b data-i18n="s2.name">Ήχος & Φωτισμός</b></a>
+          <a href="#service-decor"><span>03</span><b data-i18n="s3.name">Φωτιστική Διακόσμηση</b></a>
+          <a href="#service-360"><span>04</span><b data-i18n="s4.name">360° Photo Booth</b></a>
+        </nav>
+
+        <!-- 01 DJ -->
+        <article class="service" id="service-dj">
+          <div class="service-copy reveal">
+            <p class="service-num">01</p>
+            <p class="eyebrow" data-i18n="s1.name">DJ & Μουσική Επιμέλεια</p>
+            <h3 class="service-title" data-i18n="s1.title">Μουσική που ακολουθεί τη βραδιά σας</h3>
+            <p class="service-text" data-i18n="s1.text">Κάθε δεξίωση έχει τον δικό της ρυθμό: υποδοχή, δείπνο, πρώτος χορός, πάρτι. Συζητάμε από πριν τα τραγούδια που σας εκφράζουν και εκείνα που θέλετε να αποφύγετε, και τη βραδιά διαβάζουμε την πίστα ώστε να μείνει γεμάτη μέχρι το τέλος.</p>
+            <ul class="checklist">
+              <li data-i18n="s1.b1">Συνάντηση και μουσικό πλάνο πριν από την εκδήλωση</li>
+              <li data-i18n="s1.b2">Ελληνικό και ξένο ρεπερτόριο, από lounge μέχρι party</li>
+              <li data-i18n="s1.b3">Μικροφωνική κάλυψη για ευχές και ομιλίες</li>
+              <li data-i18n="s1.b4">Κομψό DJ booth που δένει με τον χώρο</li>
+            </ul>
+            <a href="#contact" class="text-link" data-service="dj" data-i18n="s1.link">Ρωτήστε για διαθεσιμότητα</a>
+          </div>
+          <div class="mosaic reveal">
+            <figure class="m-tall"><img src="assets/img/dj-booth-wood.jpg" alt="DJ booth με ηχεία column και διακοσμητικά φωτιστικά σε αίθουσα δεξιώσεων" data-i18n-alt="alt.dj1" loading="lazy" width="736" height="920"></figure>
+            <figure><img src="assets/img/dj-beach.jpg" alt="Στήσιμο DJ με ηχεία και φωτισμό δίπλα στη θάλασσα" data-i18n-alt="alt.dj2" loading="lazy" width="736" height="1104"></figure>
+            <figure><img src="assets/img/dj-vault.jpg" alt="Στήσιμο DJ σε πέτρινο χώρο με θολωτή οροφή" data-i18n-alt="alt.dj3" loading="lazy" width="736" height="920"></figure>
+          </div>
+        </article>
+
+        <!-- 02 Sound & Light -->
+        <article class="service service-flip" id="service-av">
+          <div class="service-copy reveal">
+            <p class="service-num">02</p>
+            <p class="eyebrow" data-i18n="s2.name">Ήχος & Φωτισμός</p>
+            <h3 class="service-title" data-i18n="s2.title">Εξοπλισμός που ακούγεται καθαρά και δείχνει όμορφα</h3>
+            <p class="service-text" data-i18n="s2.text">Ενοικιάζουμε και στήνουμε επαγγελματικά ηχητικά και φωτιστικά συστήματα, επιλεγμένα για τον χώρο και τον αριθμό των καλεσμένων σας. Διαθέσιμα μαζί με DJ ή αυτόνομα, για το δικό σας πρόγραμμα.</p>
+            <ul class="checklist">
+              <li data-i18n="s2.b1">Ηχεία column και subwoofer για ομοιόμορφη κάλυψη</li>
+              <li data-i18n="s2.b2">Κινούμενες κεφαλές, beam και wash φωτισμός</li>
+              <li data-i18n="s2.b3">Ατμοσφαιρικός φωτισμός χώρου σε ζεστούς τόνους</li>
+              <li data-i18n="s2.b4">Μεταφορά, εγκατάσταση και τεχνική υποστήριξη</li>
+            </ul>
+            <a href="#contact" class="text-link" data-service="sound" data-i18n="s2.link">Ζητήστε προσφορά ενοικίασης</a>
+          </div>
+          <div class="mosaic mosaic-quad reveal">
+            <figure class="m-tall"><img src="assets/img/light-warm-stage.jpg" alt="Ηχείο column, ζεστά διακοσμητικά φωτιστικά και DJ booth" data-i18n-alt="alt.av1" loading="lazy" width="736" height="1104"></figure>
+            <figure><img src="assets/img/light-moving-heads.jpg" alt="Κινούμενες κεφαλές με δέσμες φωτός γύρω από DJ booth" data-i18n-alt="alt.av2" loading="lazy" width="736" height="981"></figure>
+            <figure><img src="assets/img/light-beam-table.jpg" alt="Δέσμη φωτός πάνω σε στρωμένο τραπέζι δεξίωσης" data-i18n-alt="alt.av3" loading="lazy" width="736" height="981"></figure>
+            <figure><img src="assets/img/light-beams.jpg" alt="Προβολείς beam σε λειτουργία" data-i18n-alt="alt.av4" loading="lazy" width="736" height="1308"></figure>
+          </div>
+        </article>
+
+        <!-- 03 Decorative lighting -->
+        <article class="service" id="service-decor">
+          <div class="service-copy reveal">
+            <p class="service-num">03</p>
+            <p class="eyebrow" data-i18n="s3.name">Φωτιστική Διακόσμηση</p>
+            <h3 class="service-title" data-i18n="s3.title">Φως που αλλάζει τον χώρο</h3>
+            <p class="service-text" data-i18n="s3.text">Ουρανοί από φωτάκια, φωτεινές κουρτίνες, πολυέλαιοι και φωτισμένες διαδρομές. Μετατρέπουμε κήπους, πέργκολες και αίθουσες σε σκηνικό που οι καλεσμένοι σας θα θυμούνται και οι φωτογραφίες σας θα αναδείξουν.</p>
+            <ul class="checklist">
+              <li data-i18n="s3.b1">Fairy lights και φωτεινοί ουρανοί</li>
+              <li data-i18n="s3.b2">Κρεμαστοί πολυέλαιοι</li>
+              <li data-i18n="s3.b3">Φωτεινά τούνελ και διαδρομές εισόδου</li>
+              <li data-i18n="s3.b4">Επίσκεψη στον χώρο πριν από την εγκατάσταση</li>
+            </ul>
+            <a href="#contact" class="text-link" data-service="decor" data-i18n="s3.link">Συζητήστε την ιδέα σας</a>
+          </div>
+          <div class="mosaic reveal">
+            <figure class="m-tall"><img src="assets/img/decor-chandeliers.jpg" alt="Πέργκολα με πολυελαίους και φωτάκια σε δεξίωση γάμου δίπλα στη θάλασσα" data-i18n-alt="alt.de1" loading="lazy" width="660" height="990"></figure>
+            <figure><img src="assets/img/decor-canopy.jpg" alt="Ουρανός από ζεστά φωτάκια πάνω από διάδρομο κήπου" data-i18n-alt="alt.de2" loading="lazy" width="736" height="736"></figure>
+            <figure><img src="assets/img/decor-tunnel.jpg" alt="Φωτεινό τούνελ εισόδου από γιρλάντες" data-i18n-alt="alt.de3" loading="lazy" width="736" height="1104"></figure>
+          </div>
+        </article>
+
+        <!-- 04 360 booth -->
+        <article class="service service-flip" id="service-360">
+          <div class="service-copy reveal">
+            <p class="service-num">04</p>
+            <p class="eyebrow" data-i18n="s4.name">360° Photo Booth</p>
+            <h3 class="service-title" data-i18n="s4.title">Το σημείο όπου θα μαζευτούν όλοι</h3>
+            <p class="service-text" data-i18n="s4.text">Οι καλεσμένοι ανεβαίνουν στην πλατφόρμα, η κάμερα περιστρέφεται γύρω τους και σε λίγα δευτερόλεπτα έχουν ένα slow-motion βίντεο έτοιμο να το μοιραστούν. Η πιο διασκεδαστική ανάμνηση της βραδιάς.</p>
+            <ul class="checklist">
+              <li data-i18n="s4.b1">Πλατφόρμα 360° με ring light</li>
+              <li data-i18n="s4.b2">Το βίντεο απευθείας στο κινητό των καλεσμένων</li>
+              <li data-i18n="s4.b3">Στήσιμο με χαλί, κολονάκια και backdrop</li>
+              <li data-i18n="s4.b4">Χειριστής δίπλα στους καλεσμένους σε όλη τη διάρκεια</li>
+            </ul>
+            <a href="#contact" class="text-link" data-service="booth" data-i18n="s4.link">Προσθέστε το στην εκδήλωσή σας</a>
+          </div>
+          <div class="mosaic mosaic-duo reveal">
+            <figure><img src="assets/img/booth-360-elegant.jpg" alt="Πλατφόρμα 360° photo booth με ring light σε δεξίωση γάμου" data-i18n-alt="alt.b1" loading="lazy" width="736" height="1104"></figure>
+            <figure><img src="assets/img/booth-360-gold.jpg" alt="360° photo booth με κόκκινο χαλί και διακόσμηση από μπαλόνια" data-i18n-alt="alt.b2" loading="lazy" width="736" height="736"></figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ Events ============ -->
+    <section class="section section-alt" id="events">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="events.eyebrow">Εκδηλώσεις</p>
+          <h2 class="section-title" data-i18n="events.title">Για κάθε στιγμή <em>που αξίζει γιορτή.</em></h2>
+        </header>
+
+        <div class="events-grid">
+          <article class="event reveal">
+            <span class="event-num">I</span>
+            <h3 data-i18n="e1.title">Γάμοι</h3>
+            <p data-i18n="e1.text">Από την υποδοχή του ζευγαριού και τον πρώτο χορό μέχρι το ξημέρωμα. Συντονιζόμαστε με τον χώρο, τον wedding planner και τον φωτογράφο σας, ώστε κάθε στιγμή να έρθει στην ώρα της.</p>
+          </article>
+          <article class="event reveal">
+            <span class="event-num">II</span>
+            <h3 data-i18n="e2.title">Βαπτίσεις</h3>
+            <p data-i18n="e2.text">Χαρούμενη, ζεστή ατμόσφαιρα για μικρούς και μεγάλους, με μουσική στη σωστή ένταση και φωτισμό που αναδεικνύει τη διακόσμηση.</p>
+          </article>
+          <article class="event reveal">
+            <span class="event-num">III</span>
+            <h3 data-i18n="e3.title">Εταιρικές εκδηλώσεις</h3>
+            <p data-i18n="e3.text">Παρουσιάσεις, gala και εορταστικά πάρτι με καθαρό ήχο ομιλίας, διακριτικό στήσιμο και επαγγελματική συνέπεια.</p>
+          </article>
+          <article class="event reveal">
+            <span class="event-num">IV</span>
+            <h3 data-i18n="e4.title">Ιδιωτικά πάρτι</h3>
+            <p data-i18n="e4.text">Γενέθλια, επέτειοι, αρραβώνες και γιορτές στο σπίτι ή σε χώρο της επιλογής σας, με εξοπλισμό στα μέτρα της περίστασης.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Process ============ -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="process.eyebrow">Πώς δουλεύουμε</p>
+          <h2 class="section-title" data-i18n="process.title">Τέσσερα βήματα <em>μέχρι τη βραδιά σας.</em></h2>
+        </header>
+
+        <ol class="steps">
+          <li class="reveal">
+            <span class="step-num">1</span>
+            <h3 data-i18n="p1.title">Γνωριμία</h3>
+            <p data-i18n="p1.text">Μας λέτε την ημερομηνία, τον χώρο και όσα έχετε στο μυαλό σας.</p>
+          </li>
+          <li class="reveal">
+            <span class="step-num">2</span>
+            <h3 data-i18n="p2.title">Πρόταση</h3>
+            <p data-i18n="p2.text">Λαμβάνετε ξεκάθαρη προσφορά με τον εξοπλισμό και τις υπηρεσίες που ταιριάζουν στην εκδήλωσή σας.</p>
+          </li>
+          <li class="reveal">
+            <span class="step-num">3</span>
+            <h3 data-i18n="p3.title">Προετοιμασία</h3>
+            <p data-i18n="p3.text">Οριστικοποιούμε μουσική, πρόγραμμα και στήσιμο σε συνεννόηση με τον χώρο.</p>
+          </li>
+          <li class="reveal">
+            <span class="step-num">4</span>
+            <h3 data-i18n="p4.title">Η βραδιά</h3>
+            <p data-i18n="p4.text">Στήνουμε έγκαιρα, δοκιμάζουμε τα πάντα και μένουμε δίπλα σας μέχρι το τέλος.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section section-alt contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Επικοινωνία</p>
+          <h2 class="section-title" data-i18n="contact.title">Ας μιλήσουμε <em>για την εκδήλωσή σας.</em></h2>
+          <p class="section-lead" data-i18n="contact.lead">Συμπληρώστε τη φόρμα με λίγα στοιχεία και θα επικοινωνήσουμε μαζί σας με διαθεσιμότητα και προσφορά.</p>
+          <a class="ig-card" href="https://www.instagram.com/_taxiarhis_/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+            </svg>
+            <span><small data-i18n="contact.ig">Δείτε πρόσφατες εκδηλώσεις</small>@_taxiarhis_</span>
+          </a>
+        </div>
+
+        <div class="form-card reveal">
+          <form class="form" id="booking-form" novalidate>
+            <div class="form-row">
+              <label class="field">
+                <span data-i18n="f.name">Ονοματεπώνυμο</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span data-i18n="f.phone">Τηλέφωνο</span>
+                <input type="tel" name="phone" autocomplete="tel" required>
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="field">
+                <span data-i18n="f.email">Email</span>
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+              <label class="field">
+                <span data-i18n="f.date">Ημερομηνία εκδήλωσης</span>
+                <input type="date" name="date">
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="field">
+                <span data-i18n="f.type">Είδος εκδήλωσης</span>
+                <select name="type" required>
+                  <option value="" disabled selected data-i18n="f.type.0">Επιλέξτε</option>
+                  <option value="wedding" data-i18n="f.type.1">Γάμος</option>
+                  <option value="baptism" data-i18n="f.type.2">Βάπτιση</option>
+                  <option value="wedding-baptism" data-i18n="f.type.3">Γάμος & βάπτιση</option>
+                  <option value="corporate" data-i18n="f.type.4">Εταιρική εκδήλωση</option>
+                  <option value="party" data-i18n="f.type.5">Ιδιωτικό πάρτι</option>
+                  <option value="other" data-i18n="f.type.6">Άλλο</option>
+                </select>
+              </label>
+              <label class="field">
+                <span data-i18n="f.place">Χώρος / περιοχή</span>
+                <input type="text" name="place">
+              </label>
+            </div>
+
+            <fieldset class="chips">
+              <legend data-i18n="f.services">Τι σας ενδιαφέρει;</legend>
+              <label><input type="checkbox" name="services" value="dj"><span data-i18n="f.s1">DJ</span></label>
+              <label><input type="checkbox" name="services" value="sound"><span data-i18n="f.s2">Ήχος & φωτισμός</span></label>
+              <label><input type="checkbox" name="services" value="decor"><span data-i18n="f.s3">Φωτιστική διακόσμηση</span></label>
+              <label><input type="checkbox" name="services" value="booth"><span data-i18n="f.s4">360° photo booth</span></label>
+            </fieldset>
+
+            <label class="field">
+              <span data-i18n="f.msg">Λίγα λόγια για την εκδήλωση</span>
+              <textarea name="message" rows="4" data-i18n-placeholder="f.msg.ph" placeholder="Αριθμός καλεσμένων, ώρες, ό,τι άλλο θέλετε να γνωρίζουμε…"></textarea>
+            </label>
+
+            <p class="form-error" id="form-error" role="alert" hidden data-i18n="f.error">Συμπληρώστε όνομα, τηλέφωνο, email και είδος εκδήλωσης.</p>
+            <button type="submit" class="btn btn-gold btn-block" data-i18n="f.submit">Αποστολή αιτήματος</button>
+          </form>
+
+          <div class="form-success" id="form-success" hidden>
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="7.5 12.5 10.5 15.5 16.5 9"/></svg>
+            <h3 data-i18n="ok.title">Ευχαριστούμε!</h3>
+            <p data-i18n="ok.text">Λάβαμε το αίτημά σας και θα επικοινωνήσουμε μαζί σας το συντομότερο.</p>
+            <button type="button" class="btn btn-ghost" id="form-reset" data-i18n="ok.again">Νέο αίτημα</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="logo-text">DJ <b>TAXIARXIS</b></span>
+      <p data-i18n="footer.tag">DJ · Ήχος · Φωτισμός · Φωτιστική διακόσμηση · 360° Photo Booth</p>
+      <p class="footer-copy">© <span id="year">2026</span> DJ Taxiarxis · <span data-i18n="footer.by">Σχεδιασμός & κατασκευή</span> <a href="https://auragram.gr" target="_blank" rel="noopener" class="footer-credit">auragram.gr</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
