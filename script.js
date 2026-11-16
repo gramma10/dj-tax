@@ -296,6 +296,26 @@
     reveals.forEach(el => el.classList.add('in'));
   }
 
+  // Touch screens have no hover, so the same effects follow the scroll instead:
+  // the photo / event card crossing the middle of the screen gets `.focus`,
+  // and each bullet list lights up once as it comes into view.
+  if ('IntersectionObserver' in window && !reducedMotion && window.matchMedia('(hover: none)').matches) {
+    const toggleFocus = entries => entries.forEach(en => en.target.classList.toggle('focus', en.isIntersecting));
+    // Photos react within a band around the middle; the shorter event cards use a
+    // thin line at the centre so only one is lit at a time.
+    const photoIo = new IntersectionObserver(toggleFocus, { rootMargin: '-38% 0px -38% 0px' });
+    document.querySelectorAll('.mosaic figure').forEach(el => photoIo.observe(el));
+    const eventIo = new IntersectionObserver(toggleFocus, { rootMargin: '-48% 0px -48% 0px' });
+    document.querySelectorAll('.event').forEach(el => eventIo.observe(el));
+
+    const listIo = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add('lit'); listIo.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.checklist').forEach(el => listIo.observe(el));
+  }
+
   // --------------------------------------------------
   // 5. Hero video: stay still for reduced-motion visitors
   // --------------------------------------------------
