@@ -296,24 +296,24 @@
     reveals.forEach(el => el.classList.add('in'));
   }
 
-  // Touch screens have no hover, so the same effects follow the scroll instead:
-  // the photo / event card crossing the middle of the screen gets `.focus`,
-  // and each bullet list lights up once as it comes into view.
+  // Touch screens have no hover, so the hover effects get touch equivalents (`.focus`):
+  // - a photo zooms only while a finger is on it (held briefly after a quick tap)
+  // - the bullet / event card crossing the centre line of the screen is lit,
+  //   so they light up one after another as you scroll and the previous one fades out
   if ('IntersectionObserver' in window && !reducedMotion && window.matchMedia('(hover: none)').matches) {
-    const toggleFocus = entries => entries.forEach(en => en.target.classList.toggle('focus', en.isIntersecting));
-    // Photos react within a band around the middle; the shorter event cards use a
-    // thin line at the centre so only one is lit at a time.
-    const photoIo = new IntersectionObserver(toggleFocus, { rootMargin: '-38% 0px -38% 0px' });
-    document.querySelectorAll('.mosaic figure').forEach(el => photoIo.observe(el));
-    const eventIo = new IntersectionObserver(toggleFocus, { rootMargin: '-48% 0px -48% 0px' });
-    document.querySelectorAll('.event').forEach(el => eventIo.observe(el));
+    document.querySelectorAll('.mosaic figure').forEach(fig => {
+      let off;
+      fig.addEventListener('touchstart', () => { clearTimeout(off); fig.classList.add('focus'); }, { passive: true });
+      const release = () => { off = setTimeout(() => fig.classList.remove('focus'), 450); };
+      fig.addEventListener('touchend', release, { passive: true });
+      fig.addEventListener('touchcancel', release, { passive: true });
+    });
 
-    const listIo = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) { en.target.classList.add('lit'); listIo.unobserve(en.target); }
-      });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('.checklist').forEach(el => listIo.observe(el));
+    const centreIo = new IntersectionObserver(
+      entries => entries.forEach(en => en.target.classList.toggle('focus', en.isIntersecting)),
+      { rootMargin: '-48% 0px -48% 0px' }
+    );
+    document.querySelectorAll('.checklist li, .event').forEach(el => centreIo.observe(el));
   }
 
   // --------------------------------------------------

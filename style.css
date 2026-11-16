@@ -683,22 +683,20 @@ em { font-style: italic; }
 
 /* ---------- Touch: scroll-driven versions of the hover effects (classes set in script.js) ---------- */
 
-.mosaic figure.focus img { scale: 1.05; transition-duration: 1.6s; }
-.mosaic figure.focus::after { box-shadow: inset 0 0 0 1px rgba(226, 201, 143, 0.35); opacity: 0; transition-duration: 1s; }
+.mosaic figure.focus img { scale: 1.05; transition-duration: 0.9s; }
+.mosaic figure.focus::after { box-shadow: inset 0 0 0 1px rgba(226, 201, 143, 0.35); opacity: 0; }
 
 .event.focus::before { transform: scaleX(1); }
 .event.focus::after { opacity: 1; }
 .event.focus .event-num, .event.focus h3 { color: var(--gold-soft); }
 
-.checklist.lit li::after { transform: scaleX(1); transition-duration: 1.1s; transition-delay: calc(var(--i, 0) * 0.16s); }
-.checklist.lit li::before { animation: dot-glow 1.6s var(--ease) calc(var(--i, 0) * 0.16s) both; }
-.checklist li:nth-child(2) { --i: 1; }
-.checklist li:nth-child(3) { --i: 2; }
-.checklist li:nth-child(4) { --i: 3; }
-@keyframes dot-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 164, 92, 0); }
-  40% { box-shadow: 0 0 0 4px rgba(201, 164, 92, 0.14), 0 0 12px rgba(226, 201, 143, 0.5); }
+.checklist li.focus { color: var(--gold-soft); }
+.checklist li.focus::before {
+  background: var(--gold-soft);
+  transform: translateY(-2px) scale(1.4);
+  box-shadow: 0 0 0 4px rgba(201, 164, 92, 0.12), 0 0 12px rgba(226, 201, 143, 0.45);
 }
+.checklist li.focus::after { transform: scaleX(1); }
 
 /* ---------- Responsive ---------- */
 
