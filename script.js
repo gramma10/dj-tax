@@ -300,6 +300,9 @@
   // - a photo zooms only while a finger is on it (held briefly after a quick tap)
   // - the bullet / event card crossing the centre line of the screen is lit,
   //   so they light up one after another as you scroll and the previous one fades out
+  // iOS Safari only applies :active (the button press) once a touch listener exists
+  document.addEventListener('touchstart', () => {}, { passive: true });
+
   if ('IntersectionObserver' in window && !reducedMotion && window.matchMedia('(hover: none)').matches) {
     document.querySelectorAll('.mosaic figure').forEach(fig => {
       let off;
