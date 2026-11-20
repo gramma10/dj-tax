@@ -10,9 +10,12 @@
   --line-strong: rgba(240, 230, 210, 0.22);
   --text: #f3eee5;
   --muted: #a8a196;
-  --gold: #c9a45c;
-  --gold-soft: #e2c98f;
+  --gold: #d8a935;
+  --gold-soft: #f3d06a;
   --gold-ink: #17130b;
+  /* Metallic gold: dark edges, bright highlight band, like polished metal */
+  --gold-metal: linear-gradient(115deg, #9c7420 0%, #d8a935 20%, #fbe8a6 42%, #e2b444 58%, #a97d22 78%, #f0cc68 100%);
+  --gold-metal-text: linear-gradient(180deg, #fff0bf 0%, #f3d06a 30%, #c99a2e 55%, #e9bf4f 75%, #fbe3a0 100%);
   --serif: 'Noto Serif Display', 'GFS Didot', Georgia, serif;
   --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -65,6 +68,18 @@ em { font-style: italic; }
 
 .section-title em, .hero-title em { color: var(--gold-soft); font-weight: 300; }
 
+/* Metallic gold lettering (falls back to flat --gold-soft where clipping isn't supported) */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .section-title em, .hero-title em, .hero-title em .w, .logo-text b {
+    background: var(--gold-metal-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .section-title em, .hero-title em { padding-right: 0.06em; }
+}
+
 .section-title { font-size: clamp(2rem, 4.4vw, 3.4rem); margin-top: 1rem; }
 
 .section-lead {
@@ -91,18 +106,30 @@ em { font-style: italic; }
   transition: transform 0.3s var(--ease), background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.5s var(--ease);
 }
 
-.btn-gold { background: var(--gold); color: var(--gold-ink); box-shadow: 0 0 0 rgba(201, 164, 92, 0); }
+.btn-gold {
+  background: var(--gold) var(--gold-metal);
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  color: var(--gold-ink);
+  border-color: rgba(255, 236, 170, 0.35);
+  box-shadow: 0 0 0 rgba(216, 169, 53, 0), inset 0 1px 0 rgba(255, 246, 214, 0.65), inset 0 -1px 0 rgba(90, 60, 10, 0.45);
+  text-shadow: 0 1px 0 rgba(255, 240, 190, 0.35);
+  transition: transform 0.3s var(--ease), background-position 0.8s var(--ease), border-color 0.3s, color 0.3s, box-shadow 0.5s var(--ease);
+}
 
-/* Desktop: lift with a soft warm glow underneath */
+/* Desktop: lift, light glides across the metal, soft warm glow underneath */
 @media (hover: hover) {
   .btn:hover { transform: translateY(-2px); }
-  .btn-gold:hover { background: var(--gold-soft); box-shadow: 0 12px 30px -12px rgba(226, 201, 143, 0.6); }
+  .btn-gold:hover {
+    background-position: 100% 50%;
+    box-shadow: 0 12px 30px -12px rgba(243, 208, 106, 0.6), inset 0 1px 0 rgba(255, 246, 214, 0.65), inset 0 -1px 0 rgba(90, 60, 10, 0.45);
+  }
 }
 
 /* Touch: a gentle press */
 @media (hover: none) {
   .btn:active { transform: scale(0.97); transition-duration: 0.12s; }
-  .btn-gold:active { background: var(--gold-soft); }
+  .btn-gold:active { background-position: 100% 50%; }
 }
 
 /* Slow sheen of light across the main gold buttons, every few seconds */
@@ -137,7 +164,7 @@ em { font-style: italic; }
   font-weight: 600;
   font-size: 0.92rem;
   text-decoration: none;
-  border-bottom: 1px solid rgba(201, 164, 92, 0.4);
+  border-bottom: 1px solid rgba(216, 169, 53, 0.4);
   padding-bottom: 0.3rem;
   transition: gap 0.3s var(--ease), border-color 0.3s;
 }
@@ -210,7 +237,7 @@ em { font-style: italic; }
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
 }
-.lang-btn.active { background: rgba(201, 164, 92, 0.18); color: var(--gold-soft); }
+.lang-btn.active { background: rgba(216, 169, 53, 0.18); color: var(--gold-soft); }
 
 .menu-toggle {
   display: none;
@@ -407,7 +434,7 @@ em { font-style: italic; }
   font-weight: 300;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(201, 164, 92, 0.55);
+  -webkit-text-stroke: 1px rgba(216, 169, 53, 0.55);
   margin-bottom: 1.2rem;
 }
 
@@ -442,7 +469,7 @@ em { font-style: italic; }
   position: absolute;
   left: 0; right: 0; bottom: -1px;
   height: 1px;
-  background: linear-gradient(90deg, var(--gold), rgba(201, 164, 92, 0.15));
+  background: linear-gradient(90deg, var(--gold), rgba(216, 169, 53, 0.15));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.6s var(--ease);
@@ -452,7 +479,7 @@ em { font-style: italic; }
   .checklist li:hover::before {
     background: var(--gold-soft);
     transform: translateY(-2px) scale(1.5);
-    box-shadow: 0 0 0 4px rgba(201, 164, 92, 0.14), 0 0 14px rgba(226, 201, 143, 0.55);
+    box-shadow: 0 0 0 4px rgba(216, 169, 53, 0.14), 0 0 14px rgba(243, 208, 106, 0.55);
   }
   .checklist li:hover::after { transform: scaleX(1); }
 }
@@ -485,7 +512,7 @@ em { font-style: italic; }
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(226, 201, 143, 0);
+  box-shadow: inset 0 0 0 1px rgba(243, 208, 106, 0);
   background: linear-gradient(0deg, rgba(11, 10, 9, 0.28), transparent 45%);
   opacity: 0.6;
   pointer-events: none;
@@ -493,7 +520,7 @@ em { font-style: italic; }
 }
 @media (hover: hover) {
   .mosaic figure:hover img { scale: 1.07; }
-  .mosaic figure:hover::after { box-shadow: inset 0 0 0 1px rgba(226, 201, 143, 0.45); opacity: 0; }
+  .mosaic figure:hover::after { box-shadow: inset 0 0 0 1px rgba(243, 208, 106, 0.45); opacity: 0; }
   .mosaic:hover figure:not(:hover) img { filter: brightness(0.72) saturate(0.85); }
 }
 
@@ -533,7 +560,7 @@ em { font-style: italic; }
   position: absolute;
   top: -1px; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, var(--gold), rgba(201, 164, 92, 0.1));
+  background: linear-gradient(90deg, var(--gold), rgba(216, 169, 53, 0.1));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.8s var(--ease);
@@ -543,7 +570,7 @@ em { font-style: italic; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(120% 70% at 0% 0%, rgba(201, 164, 92, 0.09), transparent 70%);
+  background: radial-gradient(120% 70% at 0% 0%, rgba(216, 169, 53, 0.09), transparent 70%);
   opacity: 0;
   transition: opacity 0.6s var(--ease);
   pointer-events: none;
@@ -602,7 +629,7 @@ em { font-style: italic; }
 .js .steps li.reveal { transition-delay: var(--d, 0s); }
 .js .steps li:not(.in)::before { transform: scaleX(0); }
 .js .steps li:not(.in) .step-num { transform: scale(0.4); opacity: 0; }
-.js .steps li.in .step-num { background: var(--gold); color: var(--gold-ink); }
+.js .steps li.in .step-num { background: var(--gold) var(--gold-metal); background-size: 220% 100%; color: var(--gold-ink); box-shadow: inset 0 1px 0 rgba(255, 246, 214, 0.6); }
 @media (min-width: 1081px) {
   .steps li:nth-child(2) { --d: 0.4s; }
   .steps li:nth-child(3) { --d: 0.8s; }
@@ -678,7 +705,7 @@ em { font-style: italic; }
   transition: all 0.25s;
 }
 .chips label:hover span { border-color: var(--line-strong); color: var(--text); }
-.chips input:checked + span { background: rgba(201, 164, 92, 0.16); border-color: var(--gold); color: var(--gold-soft); }
+.chips input:checked + span { background: rgba(216, 169, 53, 0.16); border-color: var(--gold); color: var(--gold-soft); }
 .chips input:focus-visible + span { outline: 2px solid var(--gold-soft); outline-offset: 2px; }
 
 .form-error { color: #e6a383; font-size: 0.88rem; }
@@ -698,7 +725,7 @@ em { font-style: italic; }
   color: var(--gold-soft);
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid rgba(201, 164, 92, 0.4);
+  border-bottom: 1px solid rgba(216, 169, 53, 0.4);
   transition: border-color 0.3s, color 0.3s;
 }
 .footer-credit:hover { color: var(--text); border-color: var(--gold-soft); }
@@ -711,7 +738,7 @@ em { font-style: italic; }
 /* ---------- Touch: scroll-driven versions of the hover effects (classes set in script.js) ---------- */
 
 .mosaic figure.focus img { scale: 1.05; transition-duration: 0.9s; }
-.mosaic figure.focus::after { box-shadow: inset 0 0 0 1px rgba(226, 201, 143, 0.35); opacity: 0; }
+.mosaic figure.focus::after { box-shadow: inset 0 0 0 1px rgba(243, 208, 106, 0.35); opacity: 0; }
 
 .event.focus::before { transform: scaleX(1); }
 .event.focus::after { opacity: 1; }
@@ -721,7 +748,7 @@ em { font-style: italic; }
 .checklist li.focus::before {
   background: var(--gold-soft);
   transform: translateY(-2px) scale(1.4);
-  box-shadow: 0 0 0 4px rgba(201, 164, 92, 0.12), 0 0 12px rgba(226, 201, 143, 0.45);
+  box-shadow: 0 0 0 4px rgba(216, 169, 53, 0.12), 0 0 12px rgba(243, 208, 106, 0.45);
 }
 .checklist li.focus::after { transform: scaleX(1); }
 
